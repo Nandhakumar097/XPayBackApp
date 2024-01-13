@@ -14,7 +14,6 @@ class MyListAdapter : RecyclerView.Adapter<MyListAdapter.MyListViewHolder>() {
 
     private lateinit var binding: ListLayoutBinding
     var onItemClick: ((User) -> Unit)? = null
-    private var isLoaderVisible = false
     private var userList: MutableList<User> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyListViewHolder {
@@ -53,13 +52,6 @@ class MyListAdapter : RecyclerView.Adapter<MyListAdapter.MyListViewHolder>() {
         }
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return if (isLoaderVisible) {
-            if (position == userList.size - 1) 1 else 0
-        } else {
-            0
-        }
-    }
 
 
 }

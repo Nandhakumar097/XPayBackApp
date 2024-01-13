@@ -63,6 +63,5 @@ fun setExpiry(appCompatTextView: AppCompatTextView, user: User){
 @SuppressLint("SetTextI18n")
 @BindingAdapter("setCardType")
 fun setCardType(appCompatTextView: AppCompatTextView, user: User){
-    val lastFour = user.bank.cardNumber.takeLast(4)
     appCompatTextView.text = "Card type: ${user.bank.cardType}"
 }
